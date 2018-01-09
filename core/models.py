@@ -18,7 +18,7 @@ class Person(TimeStampedModel):
         ordering = ['name']
 
     def __str__(self):
-        return self.nome
+        return self.name
 
 
 class Customer(Person):
