@@ -1,5 +1,5 @@
 """
-WSGI config for API_Vendas project.
+WSGI config for vendas project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "API_Vendas.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "vendas.settings")
 
 application = get_wsgi_application()
