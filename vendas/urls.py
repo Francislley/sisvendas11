@@ -23,7 +23,7 @@ from core.views import CustomerViewSet, SellerViewSet, CategoryViewSet, ProductV
 router = routers.DefaultRouter()
 router.register(r'customers', CustomerViewSet)
 router.register(r'sellers', SellerViewSet)
-router.register(r'categorys', CategoryViewSet)
+router.register(r'categories', CategoryViewSet)
 router.register(r'products', ProductViewSet)
 
 
