@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class TimeStampedModel(models.Model):
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     modified = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -29,18 +30,26 @@ class Seller(Person):
     pass
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    categories = models.ManyToManyField(Category)
 
     def __str__(self):
-        return self.product
+        return self.name
 
 
 class Sale(TimeStampedModel):
     customer = models.ForeignKey('Customer', related_name='customer_sale')
     seller = models.ForeignKey('Seller', related_name='seller_sale')
-    
+
     def __str__(self):
         return self.created
 

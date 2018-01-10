@@ -18,11 +18,13 @@ from django.contrib import admin
 
 #imports of lib Rest_frameorw
 from rest_framework import routers
-from core.views import CustomerViewSet, SellerViewSet
+from core.views import CustomerViewSet, SellerViewSet, CategoryViewSet, ProductViewSet
 
 router = routers.DefaultRouter()
-router.register(r'customer', CustomerViewSet)
-router.register(r'seller', SellerViewSet)
+router.register(r'customers', CustomerViewSet)
+router.register(r'sellers', SellerViewSet)
+router.register(r'categorys', CategoryViewSet)
+router.register(r'products', ProductViewSet)
 
 
 urlpatterns = [
